@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: app-configmap
+data:
+  db_host: "cloudladder.cpq62cq0yvqi.ap-northeast-2.rds.amazonaws.com"
+  db_port: "3306"
+  db_name: "istory"
+  db_user: "cloudwave"
