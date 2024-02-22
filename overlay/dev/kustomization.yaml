@@ -3,6 +3,6 @@ kind: Kustomization
 images:
 - name: 553823310165.dkr.ecr.ap-northeast-2.amazonaws.com/cloudladder-repo
   newName: 553823310165.dkr.ecr.ap-northeast-2.amazonaws.com/cloudladder-repo
-  newTag: 983a8bdbba690960b83f95c1477f1595ac46b0ec
+  newTag: 3a0bc69c2e4ec6020d17f3032ce0cb0c9637af6e
 resources:
 - ../../base
