@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: nodejs-backend
-        image: 553823310165.dkr.ecr.ap-northeast-2.amazonaws.com/cloudladder-repo
+        image: 553823310165.dkr.ecr.ap-northeast-2.amazonaws.com/node-repo
         imagePullPolicy: Always
         ports:
           - containerPort: 3000
@@ -45,3 +45,7 @@ spec:
               secretKeyRef:
                 name: db-password
                 key: db_password
+        resources:
+            requests:
+              cpu: "100m"
+              memory: "256Mi"
