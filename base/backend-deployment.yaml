@@ -1,51 +1,51 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: nodejs-backend
+  name: nodejs-frontend
   namespace: default
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: nodejs-backend
+      app: nodejs-frontend
   template:
     metadata:
       labels:
-        app: nodejs-backend
+        app: nodejs-frontend
     spec:
       containers:
-      - name: nodejs-backend
-        image: 553823310165.dkr.ecr.ap-northeast-2.amazonaws.com/node-repo
-        imagePullPolicy: Always
-        ports:
-          - containerPort: 3000
-        env:
-          - name: DATABASE_HOST
-            valueFrom:
-              configMapKeyRef:
-                name: app-configmap
-                key: db_host
-          - name: DATABASE_PORT
-            valueFrom:
-              configMapKeyRef:
-                name: app-configmap
-                key: db_port
-          - name: DATABASE_NAME
-            valueFrom:
-              configMapKeyRef:
-                name: app-configmap
-                key: db_name
-          - name: DATABASE_USERNAME
-            valueFrom:
-              configMapKeyRef:
-                name: app-configmap
-                key: db_user
-          - name: DATABASE_PASSWORD
-            valueFrom:
-              secretKeyRef:
-                name: db-password
-                key: db_password
-        resources:
+        - name: nodejs-frontend
+          image: 553823310165.dkr.ecr.ap-northeast-2.amazonaws.com/node-repo
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 3000
+          env:
+            - name: DATABASE_HOST
+              valueFrom:
+                configMapKeyRef:
+                  name: app-configmap
+                  key: db_host
+            - name: DATABASE_PORT
+              valueFrom:
+                configMapKeyRef:
+                  name: app-configmap
+                  key: db_port
+            - name: DATABASE_NAME
+              valueFrom:
+                configMapKeyRef:
+                  name: app-configmap
+                  key: db_name
+            - name: DATABASE_USERNAME
+              valueFrom:
+                configMapKeyRef:
+                  name: app-configmap
+                  key: db_user
+            - name: DATABASE_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: db-password
+                  key: db_password
+          resources:
             requests:
               cpu: "100m"
               memory: "256Mi"
