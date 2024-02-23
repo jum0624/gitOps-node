@@ -5,3 +5,4 @@ resources:
 - secrets.yaml
 - backend-deployment.yaml
 - backend-service.yaml
+- hpa.yaml
