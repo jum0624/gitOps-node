@@ -9,7 +9,7 @@ metadata:
   # alb.ingress.kubernetes.io/healthcheck-path: "/"
 spec:
   selector:
-    app: nodejs-backend
+    app: nodejs-frontend
   type: LoadBalancer
   ports:
   - protocol: TCP
